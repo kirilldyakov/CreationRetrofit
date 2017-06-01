@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import ru.strongit.CreationRetrofit.model.VisitModel;
@@ -27,7 +28,7 @@ public class VisitAdapter extends RecyclerView.Adapter<VisitAdapter.ViewHolder> 
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(ru.strongit.retrofit.R.layout.org_visit_item, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.org_visit_item, parent, false);
         return new ViewHolder(v);
     }
 
@@ -58,9 +59,20 @@ public class VisitAdapter extends RecyclerView.Adapter<VisitAdapter.ViewHolder> 
 
         public ViewHolder(View itemView) {
             super(itemView);
-            mVisit = (TextView) itemView.findViewById(ru.strongit.retrofit.R.id.visitId);
-            mOrg = (TextView) itemView.findViewById(ru.strongit.retrofit.R.id.orgId);
+            mVisit = (TextView) itemView.findViewById(R.id.visitId);
+            mOrg = (TextView) itemView.findViewById(R.id.orgId);
         }
     }
+
+    public void clearSelection() {
+        for (int i = 0; i < getItemCount(); i++) {
+            notifyItemChanged(i);
+        }
+
+
+
+    }
+
+
 }
 

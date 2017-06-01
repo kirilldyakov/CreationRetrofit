@@ -1,5 +1,5 @@
-package ru.strongit.CreationRetrofit.model;
 
+package ru.strongit.CreationRetrofit.model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
@@ -21,6 +21,11 @@ public class OrganizationModel {
 
     public String getOrganizationId() {
         return organizationId;
+    }
+
+    public int getOrganizationId_int() {
+        int id = Integer.parseInt(organizationId, 0);
+        return id;
     }
 
     public void setOrganizationId(String organizationId) {
